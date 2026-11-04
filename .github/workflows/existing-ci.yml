@@ -1,0 +1,14 @@
+name: Existing CI
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  synthetic-check:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Confirm the existing workflow still runs
+        run: printf '%s\n' 'Synthetic existing CI is healthy.'
